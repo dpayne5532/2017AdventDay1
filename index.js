@@ -5,16 +5,21 @@ var str =
 function digIt(str) {
   var result = 0;
   for (var i = 0; i < str.length; i++) {
-    var a = str[i];
-    var b = str[i + 1];
-    if (b === undefined) {
-      result += 4;
+    var a = Number(str[i]);
+    
+    if (i < 1062) {
+      b = Number(str[i + 1062]);
+    } else if (i > 1062) {
+      b = Number(str[i - 1062]);
     }
+    console.log('b: ', b)
     if (a === b) {
-      result += Number(a);
+      result += a;
     }
   }
   return result;
 }
 
-console.log(digIt(str));
+ console.log(digIt(str));
+
+// 1062 is half
